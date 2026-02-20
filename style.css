@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+  background-color: #1c1c1c;
+}
+
+.container {
+  margin: 0 auto;
+  width: 120rem;
+  max-width: 95%;
+}
+
+/* NAVIGATION SECTION */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.logo-name {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.8rem;
+  background: linear-gradient(45deg, #ff6b81, #ffdde1);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(255, 107, 129, 0.3);
+}
+
+.toggle-btn {
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2f2f2f;
+  box-shadow: 0 4px 8px rgba(255, 207, 129, 0.2);
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14rem;
+}
+
+.hero-header-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 6.8rem;
+  background: linear-gradient(45deg, #ff6b81, #ffdde1); /* romantic gradient */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(255, 107, 129, 0.1);
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s 0.5s forwards;
+}
+
+.hero-header-subText {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #ffdde1;
+  margin-top: 1.2rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s 0.8s forwards;
+}
+
+.heart {
+  position: absolute;
+  font-size: 3.2rem;
+}
+
+#first-heart {
+  top: 10%;
+  left: 15%;
+  animation: rotate 2s ease-in-out infinite;
+}
+
+#second-heart {
+  top: 22%;
+  right: 20%;
+  animation: rotate 2.5s ease-in-out infinite alternate-reverse;
+}
+
+#third-heart {
+  bottom: 25%;
+  left: 10%;
+  animation: rotate 3.5s ease-in-out infinite;
+}
+
+.scroll-text {
+  color: #f1f1f1;
+  margin: 8rem;
+
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: fade-bounce 1s ease-out forwards;
+  animation-delay: 1.2s; /* after subtext */
+}
+
+#heart-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.hero-cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-color: #ff6b81;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.5);
+}
