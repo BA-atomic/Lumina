@@ -16,9 +16,9 @@ function createHeart() {
   }, 5000);
 }
 
-const heartInterval = setInterval(createHeart, 400);
+const heartInterval = setInterval(createHeart, 100);
 
-// Stop hearts after 5 seconds
+// Stop hearts after 2 seconds
 setTimeout(() => {
   clearInterval(heartInterval);
-}, 5000);
+}, 2000);

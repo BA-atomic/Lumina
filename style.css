@@ -61,6 +61,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: 14rem;
+  /* margin-bottom: 120rem; */
 }
 
 .hero-header-text {
@@ -112,7 +113,7 @@ body {
 
 .scroll-text {
   color: #f1f1f1;
-  margin: 8rem;
+  margin: 4.8rem;
 
   opacity: 0;
   transform: translateY(20px) scale(0.95);
@@ -129,7 +130,90 @@ body {
   pointer-events: none;
 }
 
-.hero-cta-btn {
+/* FEELINGS SECTION */
+.lumina-feel,
+.lumina-energy,
+.lumina-audience {
+  margin-bottom: 6.4rem;
+}
+
+.lumina-feel {
+  margin-top: -4rem;
+}
+
+.section-inner,
+.footer-inner {
+  text-align: center;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-family: "Great Vibes", cursive;
+  font-size: 4.2rem;
+  color: #ff9aa2;
+  margin-bottom: 0.875rem;
+}
+
+.section-text,
+.energy-card p,
+.audience-list,
+.section-subtext {
+  color: #f1f1f1;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+/* ENERGY SECTION */
+.energy-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.4rem;
+}
+
+.energy-card {
+  padding: 2.4rem 1.2rem;
+  background: #2c2c2c;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.07);
+}
+
+.energy-card:nth-child(1) h3 {
+  color: #ff9aa2;
+}
+
+.energy-card:nth-child(2) h3 {
+  color: #c77d87;
+}
+
+.energy-card:nth-child(3) h3 {
+  color: #f3e5ab;
+}
+
+.energy-card:nth-child(4) h3 {
+  color: #a78eb7;
+}
+
+.audience-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.highlight {
+  color: #ff9aa2;
+  font-weight: 600;
+}
+
+/* CTA SECTION */
+.lumina-cta {
+  margin-bottom: 7rem;
+}
+.cta-btn {
   display: inline-block;
   padding: 1rem 2rem;
   margin-top: 2rem;
@@ -137,18 +221,32 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   background-color: #ff6b81;
-  color: #fff;
+  color: #f1f1f1;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(255, 107, 129, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.hero-cta-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.5);
+.cta-btn:hover {
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
+  transform: translateY(1px);
+}
+
+/* FOOTER SECTION */
+.lumina-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 2rem 1rem;
+}
+.footer-inner p {
+  color: #f1f1f1;
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+
+.creator {
+  color: #f3e5ab;
+  font-weight: 600;
 }
