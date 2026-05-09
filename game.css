@@ -1,0 +1,16 @@
+.transition-container {
+  color: #ff9aa2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.8rem;
+  padding-top: 14rem;
+}
+
+.transition-container p {
+  opacity: 1;
+  visibility: hidden;
+}
