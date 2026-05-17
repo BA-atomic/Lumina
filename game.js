@@ -1,25 +1,59 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(SplitText);
 
-  texts = document.querySelectorAll(".text");
+  const welcomeTexts = [
+    "Every connection begins with curiosity...",
+    "Some people are understood slowly.",
+    "Let Lumina discover your energy.",
+  ];
 
-  let t1 = gsap.timeline();
+  let currentIndex = 0;
+  let split, animation;
+  const textContainer = document.querySelector(".text");
 
-  texts.forEach((el) => {
-    el.style.visibility = "visible";
-    split = new SplitText(el, { type: "chars" });
-    t1.from(split.chars, {
+  function playWelcomeText() {
+    split && split.revert();
+    animation && animation.revert();
+
+    if (currentIndex >= welcomeTexts.length) return;
+
+    textContainer.textContent = welcomeTexts[currentIndex];
+
+    split = SplitText.create(textContainer, { type: "chars" });
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        currentIndex++;
+        if (currentIndex < welcomeTexts.length) {
+          playWelcomeText();
+        }
+      },
+    });
+
+    // 3. Define the Entrance Animation (Intro)
+    tl.from(split.chars, {
       opacity: 0,
-      x: 150,
-      duration: 1,
-      stagger: 0.02,
+      y: 30,
+      scale: 0.9,
+      duration: 0.6,
       ease: "power3.out",
+      stagger: 0.04,
     });
-    t1.to(split.chars, {
+
+    // 4. The Reading Pause
+    // Adds a 2-second dead-space delay before executing the next animation step
+    tl.to({}, { duration: 1 });
+
+    // 5. Define the Exit Animation (Outro)
+    tl.to(split.chars, {
       opacity: 0,
-      y: -20,
-      duration: 1,
+      y: -30,
+      duration: 0.4,
+      ease: "power3.in",
       stagger: 0.02,
     });
-  });
+  }
+
+  // Kickstart the automated loop sequence on page load
+  playWelcomeText();
 });
