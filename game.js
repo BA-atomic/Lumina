@@ -8,12 +8,11 @@ window.addEventListener("DOMContentLoaded", () => {
   ];
 
   let currentIndex = 0;
-  let split, animation;
+  let split;
   const textContainer = document.querySelector(".text");
 
   function playWelcomeText() {
     split && split.revert();
-    animation && animation.revert();
 
     if (currentIndex >= welcomeTexts.length) return;
 
